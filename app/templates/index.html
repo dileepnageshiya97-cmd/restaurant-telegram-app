@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Our Menu</h2>
+<div class="menu-list">
+    {% for item in menu_items %}
+    <div class="menu-item">
+        <div>
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <span class="price">₹{{ item.price }}</span>
+        </div>
+        <button class="add-btn" onclick="addToCart('{{ item.id }}', '{{ item.name }}', '{{ item.price }}')">+ Add</button>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
